@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <title>Movie Recommendation System</title>
+    <style>
+        .subbbb:hover{
+            background-color: rgb(28, 27, 27);
+            color: aliceblue;
+        }
+        .Heading h2{
+            color: transparent;
+            -webkit-text-stroke: 1px #fff;
+            background: url(images/White.png);
+            -webkit-background-clip: text;
+            background-position: 0 0;
+            animation: back 20s linear infinite;
+        }
+        @keyframes back{
+            100%{
+                background-position: 20000px 0;
+            }
+        }
+        @media only screen and (max-width:850px){
+            .Heading h2{
+                font-size: large;
+            }
+            .container{
+                margin-left: 28px;
+                width: 320px;
+            }
+            .card-body form label b{
+                position: relative;
+                margin-left: -380px;
+            }
+            .card-body form button{
+                position: relative;
+                margin-right: -200px;
+            }
+            .selection{
+                position: relative;
+                margin-left: -230px;
+            }
+            .buttonnn{
+                position: relative;
+                margin-left: -279px;
+            }
+            .block{
+                background-attachment: fixed;
+                background-size: cover;
+                
+            }
+            .foot{
+                font-size: small;
+            }
+        }
+    </style>
+  </head>
+  <body class="bg-dark block" style="background-image:url(https://images3.alphacoders.com/882/882548.jpg); background-size: 100% 117vh">
+    <div class="container">
+        <div class="row">
+            <div class="card marginn" style="width: 100%; height:100%; margin-top: 20px; background: transparent; border: 1px solid aliceblue;">
+                <div class="card-header Heading" style="text-align: center;color: aliceblue;">
+                    <h2>OTT RECOMMENDATION SYSTEM</h2>
+                </div>
+                <div class="card-body" style="color: aliceblue;">
+                    <form  action="/products" method="POST" accept-charset="utf-8">
+                        <label style="margin-left: 450px"><b>Select the Platform</b></label>
+                        <div class="selection">
+                            <select class="form-control form-control-lg" style="width: 50%; text-align: center;margin-left: 250px; background: transparent;color: aliceblue;font-weight: bolder;border:3px solid aliceblue;" id="platform" name="platform" required="1">
+                                <option value="1" style="color: aliceblue; background:rgb(28, 27, 27)">Fan-Favourites</option>
+                                <option value="2" style="color: aliceblue; background:rgb(28, 27, 27)">Popular on Netflix</option>
+                                <option value="3" style="color: aliceblue; background:rgb(28, 27, 27)">Popular on Amazon Prime</option>
+                                <option value="4" style="color: aliceblue; background:rgb(28, 27, 27)">Popular on Disney+ Hotstar</option>
+                                <option value="5" style="color: aliceblue; background:rgb(28, 27, 27)">Popular on VOOT</option>
+                                <option value="6" style="color: aliceblue; background:rgb(28, 27, 27)">Popular on MX-Player</option>
+                                <option value="7" style="color: aliceblue; background:rgb(28, 27, 27)">New and Upcoming SuperHero Movies/Series</option>
+                                <option value="8" style="color: aliceblue; background:rgb(28, 27, 27)">New Movies in BELGAUM Theatres</option>
+                            </select>
+                        </div>
+                        <div class="buttonnn">
+                            <button type="submit"  class="btn btn-primary btn-sm subbbb" style="width: 40%; margin-top: 30px;margin-left: 320px;text-align: center;background: transparent;">
+                                Show the Results
+                            </button>
+                        </div>
+                        <br>
+                        <div class="contain" style="background: rgba(132, 129, 129, 0.4); text-align: center; color: black; font-weight: bold; margin-top: 15px; font-size: larger;">
+                            {% for movie in movies %}
+                                {% if movie is equalto movies[0] %}
+                                    <h3>{{movie}}</h3>
+                                {% else %}
+                                    <p>{{ movie }}</p>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1 foot" style="color: aliceblue; font-weight: bolder;">© 2022-2023 OTT RECOMMENDATION SYSTEM <br>
+        Built by => Rahul Patil </p>
+    </footer>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+
+  </body>
+</html>
